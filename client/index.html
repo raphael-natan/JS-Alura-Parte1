@@ -11,7 +11,7 @@
     
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -58,24 +58,27 @@
         <tfoot>
         </tfoot>
     </table>
-    <!-- <script src="js/index.js"></script> -->
+    <!-- <script src="js/index.js"></script> primeiro exercicio-->
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/models/ListaNegociacoes.js"></script>
     <script>
-        /* var n1 = new Negociacao();
-        n1.quantidade = 10;
-        n1.valor = 200.50;
-        console.log(n1); */
-
-        var n1 = new Negociacao(new Date(), 5, 700);
-        n1.quantidade = 10;
-        /* var volume = n1.obtemVolume();// var volume = n1.quantidade * n1.valor;
-        console.log(volume);
-        console.log(n1.quantidade); */
-        console.log(n1.getQuantidade());
-        console.log(n1.getData());
-        console.log(n1.getValor());
-        console.log(n1.getVolume());
+        let negociacaoController = new NegociacaoController();        
     </script>
 
+    <!-- <script>
+        let hoje = new Date();// usar let e não var para manter escopo exemplo do for!!!
+        let n1 = new Negociacao(hoje, 5, 700);
+        console.log(Object.isFrozen(n1));
+        n1._quantidade=5000;//não consigo alterar está congelado no construtor
+        console.log(n1.quantidade);
+        console.log(n1.data);
+        console.log(n1.data.getTime());
+        hoje.setDate(13); //isso não altera pois o get time está no _data
+        console.log(n1.data);
+        console.log(n1.valor);
+        console.log(n1.volume);
+    </script> -->
 </body>
 </html>
