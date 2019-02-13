@@ -12,7 +12,7 @@ class NegociacaoController{
        this._mensagem = new Mensagem();
        this._mensagemView = new MensagemView($('#mensagemView'));
        this._mensagemView.update(this._mensagem);
-
+ //teste
     }
     
     adiciona(event){
